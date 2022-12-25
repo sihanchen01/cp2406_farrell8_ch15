@@ -3,8 +3,7 @@ import java.awt.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.Color;
-public class DebugFifteen1 extends JFrame implements ActionListener
-{
+public class DebugFifteen1 extends JFrame implements ActionListener {
    JButton button1 = new JButton("Red");
    JButton button2 = new JButton("Pink");
    JButton button3 = new JButton("Orange");
@@ -14,8 +13,7 @@ public class DebugFifteen1 extends JFrame implements ActionListener
    JPanel panel1 = new JPanel(new FlowLayout());
    JPanel panel2 = new JPanel();
 
-   public DebugFifteen1()
-   {
+   public DebugFifteen1() {
       setLayout(new GridLayout(1, 2));
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       add(panel1);
@@ -27,17 +25,16 @@ public class DebugFifteen1 extends JFrame implements ActionListener
       panel1.add(button1);
 
 
-      button1.addActionListener();
-      button2.addActionListener();
-      button3.addActionListener();
-      button4.addActionListener();
-      button5.addActionListener();
+      button1.addActionListener(this);
+      button2.addActionListener(this);
+      button3.addActionListener(this);
+      button4.addActionListener(this);
+      button5.addActionListener(this);
       setSize(400, 200);
       setVisible(true);
    }
    @Override
-   public void actionPerformed(ActionEvent e)
-   {
+   public void actionPerformed(ActionEvent e) {
       Object source = e.getSource();
       if(source == button1)
          panel2.setBackground(Color.RED);
@@ -50,8 +47,9 @@ public class DebugFifteen1 extends JFrame implements ActionListener
       else 
          panel2.setBackground(Color.YELLOW);
    }
-   public static void main(String[] args)
-   {
+   public static void main(String[] args) {
       DebugFifteen1 frame = new DebugFifteen1();
+      frame.setSize(400, 300);
+      frame.setVisible(true);
    }
 }
